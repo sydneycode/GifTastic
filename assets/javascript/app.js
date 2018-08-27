@@ -28,7 +28,7 @@ $(document).on("click", ".animal-btn", function() {
 
         for (var i = 0; i < results.length; i++) {
 
-            var gifDiv = $("<div class='item'>");
+            var gifDiv = $("<div class='item' >");
             var rating = results[i].rating;
 
             // Creating a paragraph tag with the result item's rating
@@ -44,7 +44,7 @@ $(document).on("click", ".animal-btn", function() {
             animalImage.attr("data-state", "still");
             animalImage.attr("class", "gif");
             
-            //$(".gif").on("click", stopOrStartAnimation);
+            //gifDiv.attr("float", "left");
 
             // append the p element with the rating and the animal image to the gifDiv div
             gifDiv.append(p);
