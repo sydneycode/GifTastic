@@ -5,7 +5,7 @@ button {
     border-radius: 8px;
     border: none;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 5px 10px 5px 0;
 }
 
 .item {
@@ -18,4 +18,12 @@ button {
 
 #search-input {
     font-family: sans-serif;
+}
+
+#animal-input {
+    width: 300px;
+}
+
+#gif-results {
+    margin-right: 320px;
 }
