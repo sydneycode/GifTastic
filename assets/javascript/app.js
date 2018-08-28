@@ -1,11 +1,19 @@
 // an array of strings, each one related to a different topic
-var topics = ["cat", "horse", "rat", "road runner"];
+var topics = ["cat", "horse", "rat", "mouse", "crow", "kitten", "elephant", "snail",
+    "toad", "squirrel", "road runner", "coyote", "wolf", "zebra", "giraffe", "lion",
+    "walrus", "seal", "shark", "crab"];
 
-for (var i = 0; i < topics.length; i++) {
-    var nextButton = "<button class='animal-btn' data-topic='" + topics[i] + "'>" + 
-        topics[i] + "</button>"
-    $('#buttons').append(nextButton);
+// create a button on the page for each topic in the topics array
+function renderButtons() {
+    $('#buttons').empty();
+    for (var i = 0; i < topics.length; i++) {
+        var nextButton = "<button class='animal-btn' data-topic='" + topics[i] + "'>" + 
+            topics[i] + "</button>"
+        $('#buttons').append(nextButton);
+    }
 }
+
+renderButtons();
 
 $(document).on("click", ".animal-btn", function() {
     // store the value of the topic corresponding to the value that was clicked on 
@@ -28,7 +36,7 @@ $(document).on("click", ".animal-btn", function() {
 
         for (var i = 0; i < results.length; i++) {
 
-            var gifDiv = $("<div class='item' >");
+            var gifDiv = $("<div class='item'>");
             var rating = results[i].rating;
 
             // Creating a paragraph tag with the result item's rating
@@ -43,8 +51,6 @@ $(document).on("click", ".animal-btn", function() {
             animalImage.attr("data-animate", results[i].images.fixed_height.url);
             animalImage.attr("data-state", "still");
             animalImage.attr("class", "gif");
-            
-            //gifDiv.attr("float", "left");
 
             // append the p element with the rating and the animal image to the gifDiv div
             gifDiv.append(p);
@@ -77,12 +83,9 @@ $('#add-search-term').on("click", function() {
     // if the user enters a search term longer than 0 characters in length, 
     // add the search term typed into search input form as a new button
     if ($('#animal-input').val().length > 0) {
-        var searchTerm = $('#animal-input').val().toLowerCase();
+        //var searchTerm = $('#animal-input').val().toLowerCase();
+        var searchTerm = $('#animal-input').val();
         topics.push(searchTerm);
-        var nextButton = "<button class='animal-btn' data-topic='" + searchTerm + "'>" + 
-            searchTerm + "</button>"
-            console.log(nextButton);
-        $('#buttons').append(nextButton);
+        renderButtons();
     }
 });
-
