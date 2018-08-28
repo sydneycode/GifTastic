@@ -39,7 +39,7 @@ $(document).on("click", ".animal-btn", function() {
             var gifDiv = $("<div class='item'>");
             var rating = results[i].rating;
 
-            // Creating a paragraph tag with the result item's rating
+            // create a paragraph tag with the result item's rating
             var p = $("<p>").text("Rating: " + rating);
 
             // create an image tag and set the src attribute to the value necessary to 
