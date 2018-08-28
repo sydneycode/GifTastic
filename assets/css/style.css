@@ -1,0 +1,32 @@
+button {
+    background-color: purple;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 10px 5px 0;
+}
+
+.item {
+    float: left;
+    padding-right: 20px;
+}
+
+#search-box {
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#search-input {
+    font-family: sans-serif;
+}
+
+#animal-input {
+    width: 300px;
+}
+
+#gif-results {
+    margin-right: 320px;
+}
